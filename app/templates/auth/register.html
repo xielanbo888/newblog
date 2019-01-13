@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Login</h1>
+    </div>
+
+    <div class="col-md-4 col-md-offset-4">
+        {{ wtf.quick_form(form) }}
+    </div>
+
+{#    <form action="" method="post">#}
+{#        {{ form.csrf_token }}#}
+{#        <div class="container" style="text-align: center">#}
+{#            <table style="width: 20%;margin:auto">#}
+{#                <tr>#}
+{#                    <td>Email:</td>#}
+{#                    <td>{{ form.email }}</td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td>username:</td>#}
+{#                    <td>{{ form.username }}</td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td>password:</td>#}
+{#                    <td>{{ form.password }}</td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td>confim password</td>#}
+{#                    <td>{{ form.password2 }}</td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td></td>#}
+{#                    <td>{{ form.submit }} <input type="reset" name="button" id="button" value="reset" /></td>#}
+{#                </tr>#}
+{#            </table>#}
+{#        </div>#}
+{#    </form>#}
+
+{% endblock %}

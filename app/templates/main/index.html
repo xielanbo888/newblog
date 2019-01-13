@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block content %}
+    <div class="container">
+        {% if current_user.is_authenticated %}
+            {{ wtf.quick_form(form) }}
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <hr>
+        <table class="table table-striped" style="table-layout: fixed">
+            <thead>
+                <tr>
+                    <th style="width: 80px" class="text-center">用户名称</th>
+                    <th>上传内容</th>
+                    <th style="width: 120px" class="text-center">上传时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                    <tr class="post">
+                        <td class="text-center">{{ post.User.username }}</td>
+                        <td>{{ post.body }}</td>
+                        <td class="text-center">{{ moment(post.timestamp).fromNow() }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="col-md-4 col-md-offset-4">
+            <div class="pagination">
+                {{ macros.pagination_widget(pagination, '.index') }}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="../static/js/ckeditor/ckeditor.js"></script>
+{% endblock %}
+
