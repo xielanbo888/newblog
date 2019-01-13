@@ -60,9 +60,13 @@
 
         $('#myModal').on('show.bs.modal', centerModals);
 
-        function funShowModel() {
-            $('#myModal').modal(options)
-        }
+        $('#myModal').modal({
+            backdrop: false,//点击空白处不关闭对话框
+            keyboard: false,//键盘关闭对话框
+            show:true//弹出对话框
+        });
+
+
     </script>
 {% endblock %}
 
