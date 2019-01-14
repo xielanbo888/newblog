@@ -3,7 +3,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField, BooleanField, SubmitField, ValidationError
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo
-from ..models.user import User
+from ..models.authdb import User
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired('账号不能为空'), Length(1,64), Email()])

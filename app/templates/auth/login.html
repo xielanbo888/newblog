@@ -3,28 +3,28 @@
 
 {% block content %}
 
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-					&times;
-				</button>
-				<h4 class="modal-title" id="myModalLabel">
-					用户登录
-				</h4>
-			</div>
-			<div class="modal-body">
-                {{ wtf.quick_form(form) }}
-                <br>
-                <p>
-                    新用户?<a href="{{ url_for('auth.register') }}">点击注册</a>
-                </p>
-            </div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
-</div>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        用户登录
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    {{ wtf.quick_form(form) }}
+                    <br>
+                    <p>
+                        新用户?<a href="{{ url_for('auth.register') }}">点击注册</a>
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
 
 {% endblock %}
 
@@ -49,7 +49,6 @@
             keyboard: false,//键盘关闭对话框
             show:true//弹出对话框
         });
-
 
     </script>
 {% endblock %}

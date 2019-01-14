@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>图片查看</h1>
+        </div>
+
+        <div class="row">
+            <div id="img1" class="col-md-4">
+                {% if lsId[0] != '' %}
+                    <img src="{{ url_for('static',filename='photos/' + lsName[0] ) }}">
+                {% endif %}
+            </div>
+            <div id="img2" class="col-md-4"></div>
+                {% if lsId[1] != '' %}
+                    <img src="{{ url_for('static',filename='photos/' + lsName[1] ) }}">
+                {% endif %}
+            <div id="img3" class="col-md-4">
+                {% if lsId[2] != '' %}
+                    <img src="{{ url_for('static',filename='photos/' + lsName[2] ) }}">
+                {% endif %}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div id="img4" class="col-md-4">
+                {% if lsId[3] != '' %}
+                    <img src="{{ url_for('static',filename='photos/' + lsName[3] ) }}">
+                {% endif %}
+            </div>
+            <div id="img5" class="col-md-4">
+                {% if lsId[4] != '' %}
+                    <img src="{{ url_for('static',filename='photos/' + lsName[4] ) }}">
+                {% endif %}
+            </div>
+            <div id="img6" class="col-md-4">
+                {% if lsId[5] != '' %}
+                    <img src="{{ url_for('static',filename='photos/' + lsName[5] ) }}">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-4 col-md-offset-4">
+            <div class="pagination">
+                {{ macros.pagination_widget(pagination, 'uploads.showphotos') }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+
+        //img-rounded：圆角 (IE8 不支持)，添加 border-radius:6px 来获得图片圆角；
+        //img-circle：圆形 (IE8 不支持)，添加 border-radius:50% 来让整个图片变成圆形。
+        //img-thumbnail：缩略图功能，添加一些内边距（padding）和一个灰色的边框。
+        //img-responsive：图片自适用
+        $(".container img").addClass("img-responsive img-rounded center-block");
+
+    </script>
+{% endblock %}

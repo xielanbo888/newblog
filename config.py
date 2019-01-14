@@ -12,6 +12,11 @@ class Config:
     FLASKY_MAIL_SENDER = 'Flasky Admin <flask>@example.com'
     FLASKY_ADMIN = os.environ.get('FLASK_ADMIN')
 
+    #图片上传参数
+    UPLOADED_PHOTO_DEST = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app/static/photos")
+    UPLOADED_PHOTO_ALLOW = ['jpg', 'jpeg', 'png']  # 配置允许的扩展名，其他的都是不允许
+    MAX_CONTENT_LENGTH =  4 * 1024 * 1024
+
     @staticmethod
     def init_app(app):
         pass
